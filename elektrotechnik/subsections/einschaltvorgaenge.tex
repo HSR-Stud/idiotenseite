@@ -1,44 +1,6 @@
 \subsection{Einschaltvorgänge}
 \subsubsection{Kondensator}
-\begin{tabular}{ccc}
-	\includegraphics[width=6cm]{./idiotenseite/images/schaltung_C.png} &
-	\includegraphics[width=6cm]{./idiotenseite/images/uKond.png} &
-	\includegraphics[width=6cm]{./idiotenseite/images/iKond.png}\\
-\end{tabular}
-Serieschaltung von Widerstand und Kondensator an einem Rechtecksignal $U_e$
-\begin{multicols}{2}		
-	Ladevorgang:\\
-	$u_{\mathrm{C}} (t) = U_0 \cdot \biggl(1 - e^{- \frac{t}{\tau}}\biggr) = U_0
-	\cdot \biggl(1 - e^{- \frac{t}{R_{\mathrm{C}} \cdot C}}\biggr)$\\
-	$i_{\mathrm{C}} (t) = \frac{U_0}{R_{\mathrm{C}}} \cdot e^{- \frac{t}{\tau}} =
-	I_0 \cdot e^{- \frac{t}{R_{\mathrm{C}} \cdot C}}$\\
-	\newline
-	Entladevorgang\\
-	$u_{\mathrm{C}} (t) = U_0 \cdot e^{- \frac{t}{\tau}} = U_0 \cdot e^{-
-	\frac{t}{R_{\mathrm{C}} \cdot C}}$\\
-	$i_{\mathrm{C}} (t) = -	\frac{U_0}{R_{\mathrm{C}}} \cdot e^{- \frac{t}{\tau}}
-	= - I_0 \cdot e^{-\frac{t}{R_{\mathrm{C}} \cdot C}}$\\
-\end{multicols}
+\input{idiotenseite/elektrotechnik/subsections/einschalt_kondensator}
 \subsubsection{Spule}
-\begin{tabular}{ccc} 
-	\includegraphics[width=6cm]{./idiotenseite/images/schaltung_spule.png} &
-	\includegraphics[width=6cm]{./idiotenseite/images/uSpule.png} &
-	\includegraphics[width=6cm]{./idiotenseite/images/iSpule.png}\\	
-\end{tabular}
-Serieschaltung von Widerstand und Spule an einem Rechtecksignal $U_e$
-\begin{multicols}{2}
-	Ladevorgang\\
-	$i_{\mathrm{L}} (t) = I_0 \cdot \biggl(1 - \mathrm{e}^{-
-	\frac{t}{\tau}}\biggr) = \frac{U_0}{R_{\mathrm{L}}} \cdot \biggl(1 -
-	\mathrm{e}^{- \frac{t \cdot R_{\mathrm{L}}}{L}}\biggr)$\\
-	$u_{\mathrm{L}} (t) = \hat u \cdot e^{- \frac{t}{\tau}} = \hat u \cdot e^{-
-	\frac{t \cdot R_{\mathrm{L}}}{L}}$\\
-	\newline
-	Entladevorgang\\
-	$i_{\mathrm{L}} (t) = I_0 \cdot e^{- \frac{t}{\tau}} =
-	\frac{U_0}{R_{\mathrm{L}}} \cdot e^{- \frac{t \cdot
-	R_{\mathrm{L}}}{L}}$\\
-	$u_{\mathrm{L}} (t) = - \hat u \cdot e^{- \frac{t}{\tau}} = - \hat u \cdot
-	e^{- \frac{t \cdot R_{\mathrm{L}}}{L}}$\\
-\end{multicols}
+\input{idiotenseite/elektrotechnik/subsections/einschalt_spule}
 
