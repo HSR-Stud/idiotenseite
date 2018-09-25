@@ -2,8 +2,8 @@ before_install:
 - sudo apt-get update
 - sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra
 script:
-- pdflatex -interaction=nonstopmode ./IdiotenseiteInclude.tex.tex
-- pdflatex -interaction=nonstopmode ./IdiotenseiteInclude.tex.tex
+- pdflatex -interaction=nonstopmode ./IdiotenseiteInclude.tex
+- pdflatex -interaction=nonstopmode ./IdiotenseiteInclude.tex
 deploy:
   provider: releases
   api_key: $GITHUB_RELEASE_TOKEN
