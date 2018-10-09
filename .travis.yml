@@ -1,14 +1,42 @@
 before_install:
 - sudo apt-get update
 - sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra
+before_script:
+- dir
+- pwd
+- cd ..
+- dir
+- touch Idiotenseite.tex
+- echo "\documentclass[10pt,oneside,a4paper,fleqn]{scrartcl}" >> Idiotenseite.tex
+- echo "\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}" >> Idiotenseite.tex
+- echo "\usepackage[utf8]{inputenc}" >> Idiotenseite.tex
+- echo "\usepackage{multicol}" >> Idiotenseite.tex
+- echo "\usepackage[english, ngerman]{babel}" >> Idiotenseite.tex
+- echo "\usepackage[automark]{scrpage2}" >> Idiotenseite.tex
+- echo "\usepackage{tabularx}" >> Idiotenseite.tex
+- echo "\usepackage{amssymb}" >> Idiotenseite.tex
+- echo "\usepackage{mathtools}" >> Idiotenseite.tex
+- echo "\usepackage{bm}" >> Idiotenseite.tex
+- echo "\usepackage{rotating}" >> Idiotenseite.tex
+- echo "\usepackage[europeanresistors,americaninductors]{circuitikz}" >> Idiotenseite.tex
+- echo "\newcommand{\buch}[1]{\texorpdfstring{$_{\textcolor{HSRLakeGreen}{\mbox{\small{#1}}}}$}{}}" >> Idiotenseite.tex
+- echo "\newcommand{\buchSeite}[1]{\texorpdfstring{\ensuremath{_{\textcolor{red}{\mbox{\small{ S#1}}}}}}{}}" >> Idiotenseite.tex
+- echo "\newcommand{\skript}[1]{\texorpdfstring{$_{\textcolor{HSRReed}{\mbox{\small{#1}}}}$}{}}" >> Idiotenseite.tex
+- echo "\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}" >> Idiotenseite.tex
+- echo "\newcommand{\arraystretchOriginal}{1.5}" >> Idiotenseite.tex
+- echo "\renewcommand{\arraystretch}{\arraystretchOriginal}" >> Idiotenseite.tex
+- echo "\setlength{\parindent}{0pt}" >> Idiotenseite.tex
+- echo "\begin{document}" >> Idiotenseite.tex
+- echo "\input{idiotenseite/IdiotenseiteInclude}" >> Idiotenseite.tex
+- echo "\end{document}" >> Idiotenseite.tex
 script:
-- pdflatex -interaction=nonstopmode ./IdiotenseiteInclude.tex
-- pdflatex -interaction=nonstopmode ./IdiotenseiteInclude.tex
+- pdflatex -interaction=nonstopmode ./Idiotenseite.tex
+- pdflatex -interaction=nonstopmode ./Idiotenseite.tex
 deploy:
   provider: releases
   api_key: $GITHUB_RELEASE_TOKEN
   file:
-   - ./IdiotenseiteInclude.pdf
+   - ./Idiotenseite.pdf
   skip_cleanup: true
   on:
     tags: true
