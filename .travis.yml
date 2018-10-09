@@ -7,6 +7,7 @@ before_script:
 - cd ..
 - dir
 - touch Idiotenseite.tex
+- echo "% !TEX root = Idiotenseite.tex" >> Idiotenseite.tex
 - echo "\documentclass[10pt,oneside,a4paper,fleqn]{scrartcl}" >> Idiotenseite.tex
 - echo "\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}" >> Idiotenseite.tex
 - echo "\usepackage[utf8]{inputenc}" >> Idiotenseite.tex
@@ -29,6 +30,8 @@ before_script:
 - echo "\begin{document}" >> Idiotenseite.tex
 - echo "\input{idiotenseite/IdiotenseiteInclude}" >> Idiotenseite.tex
 - echo "\end{document}" >> Idiotenseite.tex
+- dir
+- pwd
 script:
 - pdflatex -interaction=nonstopmode ./Idiotenseite.tex
 - pdflatex -interaction=nonstopmode ./Idiotenseite.tex
