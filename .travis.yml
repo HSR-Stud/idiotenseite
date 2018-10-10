@@ -6,55 +6,30 @@ before_script:
 - pwd
 - cd ..
 - dir
-- f = File.new('Idiotenseite.tex', 'w')
-- f.write('% !TEX root = Idiotenseite.tex')
-- f.write("/n")
-- f.write('\documentclass[10pt,oneside,a4paper,fleqn]{scrartcl}')
-- f.write("/n")
-- f.write('\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}')
-- f.write("/n")
-- f.write('\usepackage[utf8]{inputenc}')
-- f.write("/n")
-- f.write('\usepackage{multicol}')
-- f.write("/n")
-- f.write('\usepackage[english, ngerman]{babel}')
-- f.write("/n")
-- f.write('\usepackage[automark]{scrpage2}')
-- f.write("/n")
-- f.write('\usepackage{tabularx}')
-- f.write("/n")
-- f.write('\usepackage{amssymb}')
-- f.write("/n")
-- f.write('\usepackage{mathtools}')
-- f.write("/n")
-- f.write('\usepackage{bm}')
-- f.write("/n")
-- f.write('\usepackage{rotating}')
-- f.write("/n")
-- f.write('\usepackage[europeanresistors,americaninductors]{circuitikz}')
-- f.write("/n")
-- f.write('\newcommand{\buch}[1]{\texorpdfstring{$_{\textcolor{HSRLakeGreen}{\mbox{\small{#1}}}}$}{}}')
-- f.write("/n")
-- f.write('\newcommand{\buchSeite}[1]{\texorpdfstring{\ensuremath{_{\textcolor{red}{\mbox{\small{ S#1}}}}}}{}}')
-- f.write("/n")
-- f.write('\newcommand{\skript}[1]{\texorpdfstring{$_{\textcolor{HSRReed}{\mbox{\small{#1}}}}$}{}}')
-- f.write("/n")
-- f.write('\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}')
-- f.write("/n")
-- f.write('\newcommand{\arraystretchOriginal}{1.5}')
-- f.write("/n")
-- f.write('\renewcommand{\arraystretch}{\arraystretchOriginal}')
-- f.write("/n")
-- f.write('\setlength{\parindent}{0pt}')
-- f.write("/n")
-- f.write('\begin{document}')
-- f.write("/n")
-- f.write('\input{idiotenseite/IdiotenseiteInclude}')
-- f.write("/n")
-- f.write('\end{document}')
-- f.write("/n")
-- f.close
-
+- touch Idiotenseite.tex
+- echo '% !TEX root = Idiotenseite.tex' >> Idiotenseite.tex
+- echo '\documentclass[10pt,oneside,a4paper,fleqn]{scrartcl}' >> Idiotenseite.tex
+- echo '\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}' >> Idiotenseite.tex
+- echo '\usepackage[utf8]{inputenc}' >> Idiotenseite.tex
+- echo '\usepackage{multicol}' >> Idiotenseite.tex
+- echo '\usepackage[english, ngerman]{babel}' >> Idiotenseite.tex
+- echo '\usepackage[automark]{scrpage2}' >> Idiotenseite.tex
+- echo '\usepackage{tabularx}' >> Idiotenseite.tex
+- echo '\usepackage{amssymb}' >> Idiotenseite.tex
+- echo '\usepackage{mathtools}' >> Idiotenseite.tex
+- echo '\usepackage{bm}' >> Idiotenseite.tex
+- echo '\usepackage{rotating}' >> Idiotenseite.tex
+- echo '\usepackage[europeanresistors,americaninductors]{circuitikz}' >> Idiotenseite.tex
+- echo '\newcommand{\buch}[1]{\texorpdfstring{$_{\textcolor{HSRLakeGreen}{\mbox{\small{#1}}}}$}{}}' >> Idiotenseite.tex
+- echo '\newcommand{\buchSeite}[1]{\texorpdfstring{\ensuremath{_{\textcolor{red}{\mbox{\small{ S#1}}}}}}{}}' >> Idiotenseite.tex
+- echo '\newcommand{\skript}[1]{\texorpdfstring{$_{\textcolor{HSRReed}{\mbox{\small{#1}}}}$}{}}' >> Idiotenseite.tex
+- echo '\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}' >> Idiotenseite.tex
+- echo '\newcommand{\arraystretchOriginal}{1.5}' >> Idiotenseite.tex
+- echo '\renewcommand{\arraystretch}{\arraystretchOriginal}' >> Idiotenseite.tex
+- echo '\setlength{\parindent}{0pt}' >> Idiotenseite.tex
+- echo '\begin{document}' >> Idiotenseite.tex
+- echo '\input{idiotenseite/IdiotenseiteInclude}' >> Idiotenseite.tex
+- echo '\end{document}' >> Idiotenseite.tex
 - dir
 - pwd
 script:
